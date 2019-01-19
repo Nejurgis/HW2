@@ -1,38 +1,23 @@
+
 function groupAdultsByAgeRange(arr) {
 
-    return arr.reduce((acc, next) => {
-        if (acc.age > next.age) {
-            return {
-                '20 and younger': acc
-            }
+    return arr.reduce((acc, next)=> {
+        if (acc < next.age ) {
+            return {'20 and younger': acc} 
         } else {
-            return '20 and younger', next
+            return '20 and younger', next 
         }
-    })
-
-
-
+    },{})
+        
+    
+   
     // return groupAdultsByAgeRange
 }
 
 
-console.log(groupAdultsByAgeRange([{
-    name: "Henry",
-    age: 100
-}, {
-    name: "Edgar",
-    age: 10
-}, {
-    name: "Jonukas",
-    age: 8
-}, {
-    name: "Rein",
-    age: 95
-}]));
+console.log(groupAdultsByAgeRange([]));
 
-module.exports = {
-    groupAdultsByAgeRange
-}
+module.exports = {groupAdultsByAgeRange}
 
 
 // The function will be called with an array of objects as its argument. X
