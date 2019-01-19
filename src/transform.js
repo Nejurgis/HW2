@@ -9,29 +9,49 @@ function groupAdultsByAgeRange(arr) {
     .reduce((acc,next) => {
 
         if(next.age >= 21 && next.age <= 30){
-            const ageGroup = '21-30'
+            if (!acc['21-30']) {
+                acc['21-30'] = []
+            }
+            acc['21-30'].push(next)
+            return acc
+            // console.log(next)
+            
+            
+            // console.log(next);
+            // next has to became a part of an array
+            // the key for this array will be 
+            // 21-30
+            // : next
+
+            // return acc (inside of it there is 21-30 : next)
             // next is an array
-            console.log(next);
+            
+            // SORT OF WORKS
+            // return { '20 and younger': [next]}
+
+            // return [acc] = [next]
+
             // return acc{ageGroup} = {...next}
-            // return {ageGroup: next}
+            // return ({...acc, ageGroup: next})
             // how to add to object
             
-            // console.log('21-30',next)
             // return acc['20 and younger'] = next
-            // console.log(next);
             // return acc = {...next}
         }
         if(next.age >=31 && next.age <= 40){
             // console.log('31-40',next)
+            // return acc[next.age] = next
         }
         if(next.age >= 41 && next.age <= 50){
             // console.log('41-50', next)
+            // return acc[next.age] = next
         }
         if(next.age >= 51){
             // console.log('51 and more', next)
+            // return acc[next.age] = next
         }
         return acc
-    },[{}])
+    },{})
     // .reduce((acc,next)=>{
     //     if (acc.age > 20) {
     //         return {'20 and older': acc}
@@ -54,7 +74,31 @@ function groupAdultsByAgeRange(arr) {
 }
 
 
-console.log(groupAdultsByAgeRange([{ name: "pete", age: 10 },{ name: "olya", age: 37 },{ name: "jonas", age: 25 },{ name: "onute", age: 43 },{ name: "volodymyr", age: 63 },{ name: "Tomas", age: 29 },{ name: "Petras", age: 26 },{ name: 'John', age: 40 }]));
+    //       '20 and younger':
+    //         [{ name: 'dave', age: 18 },
+    //         { name: 'hall', age: 19 },
+    //         { name: 'donn', age: 20 }],
+    //       '21-30':
+    //         [{ name: 'trey', age: 21 },
+    //         { name: 'hann', age: 29 },
+    //         { name: 'chew', age: 30 }],
+    //       '31-40':
+    //         [{ name: 'cloe', age: 31 },
+    //         { name: 'dart', age: 39 },
+    //         { name: 'this', age: 40 }],
+    //       '41-50':
+    //         [{ name: 'dame', age: 41 },
+    //         { name: 'henk', age: 49 },
+    //         { name: 'anna', age: 50 }],
+    //       '51 and older':
+    //         [{ name: 'olga', age: 51 },
+    //         { name: 'bert', age: 52 },
+    //         { name: 'oldd', age: 120 }]
+    //     }
+
+
+
+console.log(groupAdultsByAgeRange([{ name: "pete", age: 10 },{ name: "olya", age: 37 },{ name: "jonas", age: 25 },{ name: "olga", age: 25 },{ name: "onute", age: 43 },{ name: "volodymyr", age: 63 },{ name: "Tomas", age: 29 },{ name: "Petras", age: 26 },{ name: 'John', age: 40 }]));
 
 module.exports = {groupAdultsByAgeRange}
 
