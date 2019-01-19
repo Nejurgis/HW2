@@ -49,7 +49,7 @@ The app should be runnable simply by cloning the repository, installing dependen
     const groupAdultsByAgeRange = require("./transform").groupAdultsByAgeRange
     ```
     _Note: This is a named export_
-1.  The exported `groupAdultsByAgeRange` should be a function.
+1.  The exported `groupAdultsByAgeRange` should be a function. X
 1.  The function will be called with an array of objects as its argument. The objects represent people, with a property `name` and a property `age`. Your function should group each person **over the age of 18** into age ranges. Here are a few examples:
     ```js
     // Example 1
