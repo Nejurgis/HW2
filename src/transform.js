@@ -7,24 +7,31 @@ function groupAdultsByAgeRange(arr) {
     return arr.filter(el=> el.age > 18)
     // .filter(el=>el.age >= 21 && el.age < 40)
     .reduce((acc,next) => {
+
         if(next.age >= 21 && next.age <= 30){
-            console.log('21-30',next)
+            const ageGroup = '21-30'
+            // next is an array
+            console.log(next);
+            // return acc{ageGroup} = {...next}
+            // return {ageGroup: next}
+            // how to add to object
+            
+            // console.log('21-30',next)
             // return acc['20 and younger'] = next
             // console.log(next);
             // return acc = {...next}
         }
         if(next.age >=31 && next.age <= 40){
-            console.log('31-40',next)
+            // console.log('31-40',next)
         }
         if(next.age >= 41 && next.age <= 50){
-            console.log('41-50', next)
+            // console.log('41-50', next)
         }
         if(next.age >= 51){
-            console.log('51 and more', next)
+            // console.log('51 and more', next)
         }
-        // if(){}
-
-    },{})
+        return acc
+    },[{}])
     // .reduce((acc,next)=>{
     //     if (acc.age > 20) {
     //         return {'20 and older': acc}
