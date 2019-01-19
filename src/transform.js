@@ -5,12 +5,32 @@ function groupAdultsByAgeRange(arr) {
     // we could return an array of ages 
     
     return arr.filter(el=> el.age > 18)
-    .reduce((acc,next)=>{
-        if (acc.age > 20) {
-            return {'20 and older': acc}
+    // .filter(el=>el.age >= 21 && el.age < 40)
+    .reduce((acc,next) => {
+        if(next.age >= 21 && next.age <= 30){
+            console.log('21-30',next)
+            // return acc['20 and younger'] = next
+            // console.log(next);
+            // return acc = {...next}
         }
-        // console.log(acc);
-    })
+        if(next.age >=31 && next.age <= 40){
+            console.log('31-40',next)
+        }
+        if(next.age >= 41 && next.age <= 50){
+            console.log('41-50', next)
+        }
+        if(next.age >= 51){
+            console.log('51 and more', next)
+        }
+        // if(){}
+
+    },{})
+    // .reduce((acc,next)=>{
+    //     if (acc.age > 20) {
+    //         return {'20 and older': acc}
+    //     }
+    //     // console.log(acc);
+    // })
 
 
     // return arr.reduce((acc, next)=> {
@@ -27,7 +47,7 @@ function groupAdultsByAgeRange(arr) {
 }
 
 
-console.log(groupAdultsByAgeRange([{ name: "pete", age: 10 },{ name: "jonas", age: 25 },{ name: 'John', age: 40 }]));
+console.log(groupAdultsByAgeRange([{ name: "pete", age: 10 },{ name: "olya", age: 37 },{ name: "jonas", age: 25 },{ name: "onute", age: 43 },{ name: "volodymyr", age: 63 },{ name: "Tomas", age: 29 },{ name: "Petras", age: 26 },{ name: 'John', age: 40 }]));
 
 module.exports = {groupAdultsByAgeRange}
 
